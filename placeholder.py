@@ -119,26 +119,89 @@ print(numOfAffect)
 
 # 5 
 # Calculating Maximum Hurricane Count
+def mostAffected(dict):
+  mostAffectedArea = {}
+  max_area_count = 0
+  max_area = ""
+    
+  for x in dict.keys():
+    if dict[x] > mostAffected:
+      max_area_count = dict[x]
+      max_area = x
+
+  mostAffectedArea.update({max_area:max_area_count})
+  return mostAffectedArea
+
+# find most frequently affected area and the number of hurricanes involved in
+mostAffectedArea = mostAffected(numOfAffect)
+print(mostAffectedArea)
+	
 
 # find most frequently affected area and the number of hurricanes involved in
 
 
 # 6
 # Calculating the Deadliest Hurricane
+def deadliestHurricanes(dict):
+    deadliest = {}
+    maxNumOfDeaths = 0
+    deadlyHurricane= ""
+    
+    for x in dict.keys():
+        if (dict[x]["Deaths"] > maxNumOfDeaths):
+            deadlyHurricane = x
+            maxNumOfDeaths = dict[x]["Deaths"]
 
+    deadliest.update({deadliestHurricanes:maxNumOfDeaths})
+    return deadliest
+        
 # find highest mortality hurricane and the number of deaths
-
+deadliestHurricane = deadliestHurricanes(myDict)
+print(deadliestHurricane)
 # 7
 # Rating Hurricanes by Mortality
+mortality_scale = {0: 0,
+                   1: 100,
+                   2: 500,
+                   3: 1000,
+                   4: 10000}
 
+def mortalityRating(dict):
+    rating = {0:[],
+              1:[],
+              2:[],
+              3:[],
+              4:[],
+              5:[]}
+    
+    for x in dict.keys():
+        for y in mortality_scale.keys():
+            if (dict[x]["Deaths"] > mortality_scale[y]):
+                rating[y].append(dict[x]["Name"])
+                
+    return rating
+                
 
 # categorize hurricanes in new dictionary with mortality severity as key
-
+rating = mortalityRating(myDict)
+print(rating)
 
 # 8 Calculating Hurricane Maximum Damage
+def maxDamage(dict):
+    maxHurricane = {}
+    costHurricane = 0
+    costHurricanName = ""
 
+    for x in dict.keys():
+        if (dict[x]["Damage"] > costHurricane):
+            costHurricane = dict[x]["Damage"]
+            costHurricanName = dict[x]["Name"]
+            
+    maxHurricane.update({costHurricanName:costHurricane})
+    return maxHurricane
 # find highest damage inducing hurricane and its total cost
-
+highestDamageHurricane = maxDamage(myDict)
+print(highestDamageHurricane)
 
 # 9
 # Rating Hurricanes by Damage
@@ -147,5 +210,22 @@ damage_scale = {0: 0,
                 2: 1000000000,
                 3: 10000000000,
                 4: 50000000000}
+
+def damageRating(dict):
+    rating = {0:[],
+              1:[],
+              2:[],
+              3:[],
+              4:[],
+              5:[]}
+    
+    for x in dict.keys():
+        for y in damage_scale.keys():
+            if (dict[x]["Damage"] > damage_scale[y]):
+                rating[y].append(dict[x]["Damage"])
+                
+    return rating
   
 # categorize hurricanes in new dictionary with damage severity as key
+damageRatings = damageRating(myDict)
+print(damageRatings)
