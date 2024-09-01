@@ -38,3 +38,11 @@ h3{
     color: blue;
     display: inline-block;
 }
+
+.frames{
+    background-color: lightcoral;
+}
+
+.paint{
+    background-color: skyblue;
+}
