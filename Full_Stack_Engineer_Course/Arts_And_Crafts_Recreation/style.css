@@ -1,0 +1,40 @@
+.image {
+    background-image: url('pattern.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.title{
+    font-family: Helvetica;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    color:khaki;
+}
+
+h3{
+    font-family: Helvetica;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.brushes{
+    background-color: mediumspringgreen;
+}
+
+.subtitle{
+    font-weight: bold;
+    font-size: large;
+}
+
+.description-text{
+    display: inline-block;
+}
+
+.price{
+    font-family: Helvetica;
+    font-weight: bold;
+    color: blue;
+    display: inline-block;
+}
